@@ -1,0 +1,15 @@
+{
+  "index.html": {
+    "resources": [
+      "css/index.css",
+      "css/search.css",
+      "js/search.js",
+      "js/index.js",
+      "js/map.js",
+      "js/jquery-2.1.0.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf"
+    ],
+    "refer": []
+  }
+}

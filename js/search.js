@@ -1,0 +1,3 @@
+function returnMap(){
+    $("#searchDiv").hide();
+}
