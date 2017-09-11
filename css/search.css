@@ -6,7 +6,7 @@
     right: 0px;
     z-index: 9999;
     background: white;
-    display: none;
+    /*display: none;*/
 }
 #searchBox{
     position: relative;
@@ -41,11 +41,34 @@ right: 10px;
 #typeDiv{
     width: 100%;
     text-align: center;
-    height: auto;
+    height: 210px;
     background-color: #fefefe;
     overflow: hidden;
 }
 
 #typeDiv ul{
     list-style: none;
+}
+
+.a-clicked{
+	background: rgba(255,255,255,0.8);
+}
+
+#poi-list{
+	top:260px;
+}
+
+#pois li div{
+	height: 30px;
+}
+
+#pois li div img{
+	position: absolute;
+	bottom: 1px;;
+}
+
+#pois li font{
+	position: absolute;
+	bottom: 2px;
+	left: 70px;
 }

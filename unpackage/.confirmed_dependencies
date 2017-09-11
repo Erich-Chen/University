@@ -8,7 +8,14 @@
       "js/map.js",
       "js/jquery-2.1.0.js",
       "css/mui.min.css",
-      "fonts/mui.ttf"
+      "fonts/mui.ttf",
+      "fonts/kuaidi.svg",
+      "fonts/shitang.svg",
+      "fonts/shangdian.svg",
+      "fonts/yundong.svg",
+      "fonts/xueyuan.svg",
+      "js/mui.min.js",
+      "fonts/jingdian.svg"
     ],
     "refer": []
   }
