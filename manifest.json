@@ -192,7 +192,7 @@
 					"xxhdpi": ""
 				}
 			},
-			"debug": false
+			"debug": true
 		}
 	},
 	"dependencies": {
@@ -213,7 +213,8 @@
 					"fonts/yundong.svg",
 					"fonts/xueyuan.svg",
 					"js/mui.min.js",
-					"fonts/jingdian.svg"
+					"fonts/jingdian.svg",
+					"js/data.js"
 				],
 				"refer": [],
 				"priority": 0

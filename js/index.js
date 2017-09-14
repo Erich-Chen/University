@@ -1,4 +1,3 @@
-var xueyuanData = null;
 //打开菜单
 function openMenu() {
 	$("#openMenu").hide();
@@ -7,6 +6,12 @@ function openMenu() {
 	});
 }
 
+//右上角初始化地图
+$("#reset").click(function(){
+	map.clearOverlays();
+	map.centerAndZoom(new BMap.Point(116.038355,28.686546), 16);
+})
+
 // 隐藏菜单
 function closeMenu() {
 	$("#left-menu ").animate({
@@ -14,11 +19,9 @@ function closeMenu() {
 	}, function() {
 		$("#openMenu").show();
 	});
-
 }
 
 //左下角显示与隐藏
-
 var more_btn_sum = 1;
 
 function openAndCloseMoreBtn() {
@@ -69,29 +72,53 @@ function openAndCloseMoreBtn() {
 	more_btn_sum = more_btn_sum * -1;
 }
 
-
 // 打开搜索页面
 function openSearchDiv() {
 	$("#searchDiv").show();
 	// $("#search-input").focus();
-	if(xueyuanData != null) {
-		console.log("lll")
-		return;
-	} else {
-		
-		mui.get("http://api.map.baidu.com/geodata/v3/poi/list?geotable_id=175814&ak=WtSZiDjE0KEgfSMsxGY7pxng", function(data) {
-			xueyuanData = data.pois;
-			console.log(JSON.stringify(xueyuanData))
-			var li=[];
-			for(var a=0;a<xueyuanData.length;a++){
-				li[a]=$('<li data-index="'+xueyuanData[a].title+'" class="mui-table-view-cell"> <div>	<img src="fonts/xueyuan.svg" ></div><font>'+xueyuanData[a].title+'</font></li>')
-				$(li[a]).click(function(){
-					console.log($(this).html());
-					console.log($(this).attr("data-index"));
+	$("#pois").empty(); //清空结果
+
+	mui.get("http://api.map.baidu.com/geodata/v3/poi/list?geotable_id=" + dataStore.xueyuan + "&ak=" + dataStore.ak + "&leixing=xueyuan", function(data) {
+		var d = data.pois;
+		console.log(data.pois.length);
+		var li;
+		for(var a = 0; a < d.length; a++) {
+
+			li = $('<li data-index="' + a + '" class="mui-table-view-cell"> <div>	<img src="fonts/xueyuan.svg" ></div><font>' + d[a].title + '</font></li>')
+			$(li).click(function() {
+
+				var p = d[$(this).attr("data-index")];
+
+				$("#header-text").html(p.title)
+				var point = new BMap.Point(p.location[0], p.location[1]);
+				//设置中心和比例尺
+				map.setCenter(point);
+				map.setZoom(19);
+
+				// 添加点覆盖物
+				map.clearOverlays();
+				var marker = new BMap.Marker(point);
+				map.addOverlay(marker);
+
+				var content = p.description;
+
+				var infoWindow = new BMap.InfoWindow("<font style='color:#97999a;font-size:12px'>" + p.address + "</font>", {
+					width: 200,
+					title: "<div style='color:#0078ff'>" + p.title + "</div>"
 				});
-				$("#pois").append(li[a]);
-			}
-		}, "json")
-	}
-	
+
+				marker.openInfoWindow(infoWindow);
+				marker.addEventListener("click", function() {
+					this.openInfoWindow(infoWindow);
+				});
+
+				// 隐藏搜索页面
+				$("#searchDiv").hide();
+
+			});
+			$("#pois").append(li);
+		}
+
+	}, "json")
+
 }
