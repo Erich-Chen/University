@@ -80,7 +80,6 @@ function openSearchDiv() {
 
 	mui.get("http://api.map.baidu.com/geodata/v3/poi/list?geotable_id=" + dataStore.xueyuan + "&ak=" + dataStore.ak + "&leixing=xueyuan", function(data) {
 		var d = data.pois;
-		console.log(data.pois.length);
 		var li;
 		for(var a = 0; a < d.length; a++) {
 

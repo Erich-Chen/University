@@ -16,7 +16,8 @@
       "fonts/xueyuan.svg",
       "js/mui.min.js",
       "fonts/jingdian.svg",
-      "js/data.js"
+      "js/data.js",
+      "fonts/location.png"
     ],
     "refer": []
   }
