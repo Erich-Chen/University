@@ -8,5 +8,9 @@
 - 百度API
 
 ## 预览
-![001](dist/01.gif)
+![001](https://github.com/xiaodaxin/University/blob/master/dist/01.gif?raw=true)
+
+![001](https://github.com/xiaodaxin/University/blob/master/dist/02.png?raw=true)
+
+![001](https://github.com/xiaodaxin/University/blob/master/dist/03.png?raw=true)
 
