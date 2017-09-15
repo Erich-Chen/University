@@ -1,10 +1,10 @@
 // 创建Map实例
 var map = new BMap.Map("map",{
 	mapType:BMAP_NORMAL_MAP
-});    
+});
 
 // 初始化地图,设置中心点坐标和地图级别
-map.centerAndZoom(new BMap.Point(116.038355,28.686546), 16);  
+map.centerAndZoom(new BMap.Point(116.038355,28.686546), 16);
 
 // 底图切换
 $("#basemap").click(function(){
@@ -19,7 +19,6 @@ $("#basemap").click(function(){
 
 //右下角定位
 $("#zoom").click(function() {
-	
 	plus.geolocation.getCurrentPosition(function(position){
 		map.clearOverlays();
 		var point=new BMap.Point(position.coords.longitude,position.coords.latitude)

@@ -1,3 +1,12 @@
-## 江西师范大学
+# Jiangxi Normal University
 
-<p>纯前端开发的校园地图应用APP</p>
+> 纯前端开发的校园地图应用APP
+
+## 技术栈
+- MUI
+- HTMLplus
+- 百度API
+
+## 预览
+![001](dist/01.gif)
+
