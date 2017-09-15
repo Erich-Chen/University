@@ -4,10 +4,15 @@
 
 ## 技术栈
 - MUI
-- HTMLplus
+- HTML5+
 - 百度API
+- HBulider
 
 ## 预览
-![001](https://github.com/xiaodaxin/University/blob/master/dist/01.gif?raw=true)
 
-![002](https://github.com/xiaodaxin/University/blob/master/dist/02.png?raw=true)
+![001](https://github.com/xiaodaxin/University/blob/master/doc/01.gif?raw=true)
+
+![002](https://github.com/xiaodaxin/University/blob/master/doc/02.png?raw=true)
+
+
+## 开发日志
